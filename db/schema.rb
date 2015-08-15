@@ -27,17 +27,17 @@ ActiveRecord::Schema.define(version: 20150815155534) do
   add_index "trackpoints", ["track_id"], name: "index_trackpoints_on_track_id"
 
   create_table "tracks", force: :cascade do |t|
-    t.string   "name",            default: ""
-    t.text     "description",     default: ""
+    t.string   "name",        default: ""
+    t.text     "description", default: ""
     t.date     "date"
-    t.integer  "wobauth_user_id"
-    t.string   "creator",         default: ""
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "user_id"
+    t.string   "creator",     default: ""
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "tracks", ["date"], name: "index_tracks_on_date"
-  add_index "tracks", ["wobauth_user_id"], name: "index_tracks_on_wobauth_user_id"
+  add_index "tracks", ["user_id"], name: "index_tracks_on_user_id"
 
   create_table "wobauth_authorities", force: :cascade do |t|
     t.integer  "authorizable_id"

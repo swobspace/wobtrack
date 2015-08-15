@@ -5,7 +5,7 @@ Track:
 ------
 
     bin/rails g scaffold Track name:string description:text date:date:index \
-              wobauth_user:references creator:string
+              user:references creator:string
 
 Trackpoint:
 -----------

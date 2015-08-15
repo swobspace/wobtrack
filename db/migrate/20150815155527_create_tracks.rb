@@ -4,7 +4,7 @@ class CreateTracks < ActiveRecord::Migration
       t.string :name, default: ""
       t.text :description, default: ""
       t.date :date
-      t.references :wobauth_user, index: true, foreign_key: true
+      t.references :user, index: true, foreign_key: true
       t.string :creator, default: ""
 
       t.timestamps null: false
