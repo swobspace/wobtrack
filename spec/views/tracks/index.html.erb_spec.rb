@@ -6,13 +6,13 @@ RSpec.describe "tracks/index", type: :view do
       Track.create!(
         :name => "Name",
         :description => "MyText",
-        :wobauth_user => nil,
+        :user => nil,
         :creator => "Creator"
       ),
       Track.create!(
         :name => "Name",
         :description => "MyText",
-        :wobauth_user => nil,
+        :user => nil,
         :creator => "Creator"
       )
     ])

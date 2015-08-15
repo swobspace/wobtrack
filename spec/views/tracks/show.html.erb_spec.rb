@@ -5,7 +5,7 @@ RSpec.describe "tracks/show", type: :view do
     @track = assign(:track, Track.create!(
       :name => "Name",
       :description => "MyText",
-      :wobauth_user => nil,
+      :user => nil,
       :creator => "Creator"
     ))
   end

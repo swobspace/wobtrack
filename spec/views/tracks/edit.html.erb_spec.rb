@@ -5,7 +5,7 @@ RSpec.describe "tracks/edit", type: :view do
     @track = assign(:track, Track.create!(
       :name => "MyString",
       :description => "MyText",
-      :wobauth_user => nil,
+      :user => nil,
       :creator => "MyString"
     ))
   end
@@ -19,7 +19,7 @@ RSpec.describe "tracks/edit", type: :view do
 
       assert_select "textarea#track_description[name=?]", "track[description]"
 
-      assert_select "input#track_wobauth_user_id[name=?]", "track[wobauth_user_id]"
+      assert_select "input#track_user_id[name=?]", "track[user_id]"
 
       assert_select "input#track_creator[name=?]", "track[creator]"
     end
