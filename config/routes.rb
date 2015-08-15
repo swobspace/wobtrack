@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Wobauth::Engine, at: '/auth'
+
   resources :trackpoints
   resources :tracks
   # The priority is based upon order of creation: first created -> highest priority.
