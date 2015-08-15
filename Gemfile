@@ -50,6 +50,10 @@ gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails'
 gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git', branch: 'master'
 gem 'wobapphelpers', git: 'https://github.com/swobspace/wobapphelpers', branch: 'master'
+gem 'wobauth', git: 'https://github.com/swobspace/wobauth.git', branch: 'master'
+gem 'cancancan', '~> 1.12.0'
+gem 'settingslogic'
+
 group :development do
   gem 'thin'
   gem 'guard'
