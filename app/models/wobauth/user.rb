@@ -4,5 +4,9 @@ class Wobauth::User < ActiveRecord::Base
 
   # make devise modules configurable: see config/initializers/boskop.rb
   devise *Wobtrack.devise_modules
+
+  # -- associations
+  has_many :tracks, dependent: :destroy
+
 end
 
