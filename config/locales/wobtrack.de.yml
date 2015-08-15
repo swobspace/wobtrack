@@ -1,15 +1,34 @@
 de:
+  actions:
+    destroy: Datensatz löschen
+    mandantory: Pflichtfelder
+    optional: Optional
+    search: Suche
+    cancel: abbrechen
+    reset_table: Tabelle zurücksetzen
+
   activerecord:
     models:
+      track: Track
+      trackpoint: Trackpoint
       user: User
 
   attributes:
+    creator: Ersteller
     description: Beschreibung
     displayname: Anzeigename
+    elevation: Höhe
     givenname: Vorname
+    heart_rate: Herzfrequenz
+    longitude: Longitude
+    latitude: Latitude
     name: Name
     sn: Nachname
+    track: Track
+    trackpoint: Trackpoint
     username: Username
 
   controller:
+    tracks: Tracks
+    trackpoints: Trackpoints
     users: Benutzer
