@@ -9,6 +9,6 @@ power (Watt), summary height and the gradient of the path.
 
 wobtrack may later be extended to show track on a map like openstreetmap, but this is not the primary goal.
 
-THIS APPLICATION IS UNDER HEAYY DEVELOPMENT AND NOT READY FOR USAGE YET.
+THIS APPLICATION IS UNDER HEAVY DEVELOPMENT AND NOT READY FOR USAGE YET.
 
 (C) 2015 Wolfgang Barth
