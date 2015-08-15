@@ -11,5 +11,5 @@ Trackpoint:
 -----------
 
     bin/rails g scaffold Trackpoint 'longitude:decimal{10,8}' \
-              'latitude:decimal{10,8}' 'elevation{8,2}' time:datetime \
+              'latitude:decimal{10,8}' 'elevation:decimal{8,2}' time:datetime \
               track:references heart_rate:integer
