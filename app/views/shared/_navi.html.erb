@@ -1,0 +1,25 @@
+<ul class="nav navbar-nav">
+  <% if can? :navigate, :tracks %>
+    <li class="dropdown <%= active_class('tracks') %>">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%= t('controller.tracks') %><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li> <%=link_to t('wobtrack.all_tracks'), main_app.tracks_path %></li>
+        <li> <%=link_to t('wobtrack.new_track'), main_app.new_track_path %></li>
+      </ul>
+    </li>
+  <% end %>
+  <% if can? :navigate, :configuration %>
+    <li class="dropdown <%= configuration_active_class %>">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%= t('wobtrack.configuration') %><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <% Wobtrack::CONFIGURATION_CONTROLLER.each do |ctrlr| %>
+          <li>
+            <%=link_to t('controller.' + ctrlr), main_app.send("#{ctrlr}_path")%>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
