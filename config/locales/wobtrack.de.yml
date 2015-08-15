@@ -1,4 +1,8 @@
 de:
+  wobtrack:
+    all_tracks: Trackübersicht
+    new_track: Neuen Track anlegen
+    configuration: Konfiguration
   actions:
     destroy: Datensatz löschen
     mandantory: Pflichtfelder
