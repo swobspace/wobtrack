@@ -70,8 +70,7 @@ group :test, :development do
 end
 
 group :test do
-  gem 'shoulda', require: false
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers',require: false
   gem 'factory_girl_rails'
   gem 'database_rewinder'
   gem 'capybara'
