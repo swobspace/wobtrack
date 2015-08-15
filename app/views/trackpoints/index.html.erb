@@ -1,0 +1,38 @@
+<h1><%= t('controller.trackpoints') %></h1>
+
+<table id="dataTable" class="table table-bordered table-striped dataTable">
+<thead>
+  <tr>
+    <th><%= t('attributes.longitude') %></th>
+    <th><%= t('attributes.latitude') %></th>
+    <th><%= t('attributes.elevation{8,2}') %></th>
+    <th><%= t('attributes.time') %></th>
+    <th><%= t('attributes.track') %></th>
+    <th><%= t('attributes.heart_rate') %></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+<% @trackpoints.each do |trackpoint| %>
+  <%= content_tag_for(:tr, trackpoint) do %>
+    <td><%= trackpoint.longitude %></td>
+    <td><%= trackpoint.latitude %></td>
+    <td><%= trackpoint.elevation{8,2} %></td>
+    <td><%= trackpoint.time %></td>
+    <td><%= trackpoint.track %></td>
+    <td><%= trackpoint.heart_rate %></td>
+    <td class="nowrap">
+      <%= show_link trackpoint %>
+      <%= edit_link trackpoint %>
+      <%= delete_link trackpoint %>
+    </td>
+  <% end %>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= back_link %>
+<%= new_link Trackpoint %>

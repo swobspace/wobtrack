@@ -1,0 +1,36 @@
+<h1><%= t('controller.tracks') %></h1>
+
+<table id="dataTable" class="table table-bordered table-striped dataTable">
+<thead>
+  <tr>
+    <th><%= t('attributes.name') %></th>
+    <th><%= t('attributes.description') %></th>
+    <th><%= t('attributes.date') %></th>
+    <th><%= t('attributes.wobauth_user') %></th>
+    <th><%= t('attributes.creator') %></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+<% @tracks.each do |track| %>
+  <%= content_tag_for(:tr, track) do %>
+    <td><%= track.name %></td>
+    <td><%= track.description %></td>
+    <td><%= track.date %></td>
+    <td><%= track.wobauth_user %></td>
+    <td><%= track.creator %></td>
+    <td class="nowrap">
+      <%= show_link track %>
+      <%= edit_link track %>
+      <%= delete_link track %>
+    </td>
+  <% end %>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= back_link %>
+<%= new_link Track %>

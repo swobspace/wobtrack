@@ -1,0 +1,29 @@
+<table class="table table-bordered table-hover autowidth">
+  <tr>
+    <th><%= t('attributes.name')%>:</th>
+    <td><%= @track.name %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.description')%>:</th>
+    <td><%= @track.description %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.date')%>:</th>
+    <td><%= @track.date %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.wobauth_user')%>:</th>
+    <td><%= @track.wobauth_user %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.creator')%>:</th>
+    <td><%= @track.creator %></td>
+  </tr>
+</table>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= back_link %>
+  <%= edit_link(@track) %>
+  <%= delete_link(@track) %>
+  <%= new_link Track %>
+</div>

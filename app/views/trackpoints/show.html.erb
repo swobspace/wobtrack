@@ -1,0 +1,33 @@
+<table class="table table-bordered table-hover autowidth">
+  <tr>
+    <th><%= t('attributes.longitude')%>:</th>
+    <td><%= @trackpoint.longitude %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.latitude')%>:</th>
+    <td><%= @trackpoint.latitude %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.elevation{8,2}')%>:</th>
+    <td><%= @trackpoint.elevation{8,2} %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.time')%>:</th>
+    <td><%= @trackpoint.time %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.track')%>:</th>
+    <td><%= @trackpoint.track %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.heart_rate')%>:</th>
+    <td><%= @trackpoint.heart_rate %></td>
+  </tr>
+</table>
+
+<div class="btn-toolbar" role="toolbar">
+  <%= back_link %>
+  <%= edit_link(@trackpoint) %>
+  <%= delete_link(@trackpoint) %>
+  <%= new_link Trackpoint %>
+</div>
