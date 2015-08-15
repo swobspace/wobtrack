@@ -5,7 +5,7 @@
   <tr>
     <th><%= t('attributes.longitude') %></th>
     <th><%= t('attributes.latitude') %></th>
-    <th><%= t('attributes.elevation{8,2}') %></th>
+    <th><%= t('attributes.elevation') %></th>
     <th><%= t('attributes.time') %></th>
     <th><%= t('attributes.track') %></th>
     <th><%= t('attributes.heart_rate') %></th>
@@ -18,7 +18,7 @@
   <%= content_tag_for(:tr, trackpoint) do %>
     <td><%= trackpoint.longitude %></td>
     <td><%= trackpoint.latitude %></td>
-    <td><%= trackpoint.elevation{8,2} %></td>
+    <td><%= trackpoint.elevation %></td>
     <td><%= trackpoint.time %></td>
     <td><%= trackpoint.track %></td>
     <td><%= trackpoint.heart_rate %></td>

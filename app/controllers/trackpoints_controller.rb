@@ -51,6 +51,6 @@ class TrackpointsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trackpoint_params
-      params.require(:trackpoint).permit(:longitude, :latitude, :elevation{8,2}, :time, :track_id, :heart_rate)
+      params.require(:trackpoint).permit(:longitude, :latitude, :elevation, :time, :track_id, :heart_rate)
     end
 end

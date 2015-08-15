@@ -5,7 +5,7 @@ RSpec.describe "trackpoints/new", type: :view do
     assign(:trackpoint, Trackpoint.new(
       :longitude => "9.99",
       :latitude => "9.99",
-      :elevation{8,2} => "MyString",
+      :elevation => "160.2",
       :track => nil,
       :heart_rate => 1
     ))
@@ -20,7 +20,7 @@ RSpec.describe "trackpoints/new", type: :view do
 
       assert_select "input#trackpoint_latitude[name=?]", "trackpoint[latitude]"
 
-      assert_select "input#trackpoint_elevation{8,2}[name=?]", "trackpoint[elevation{8,2}]"
+      assert_select "input#trackpoint_elevation[name=?]", "trackpoint[elevation]"
 
       assert_select "input#trackpoint_track_id[name=?]", "trackpoint[track_id]"
 
