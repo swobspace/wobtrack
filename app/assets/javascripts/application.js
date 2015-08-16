@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require data-confirm-modal
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-de
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/extras/dataTables.responsive
+//= require select2
+//= require select2_locale_de
+//= require modernizr.touch.2.8.3
+//= require wobtrack

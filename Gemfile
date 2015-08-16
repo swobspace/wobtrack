@@ -43,7 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
-
 gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'jquery-ui-rails'
@@ -53,6 +52,9 @@ gem 'wobapphelpers', git: 'https://github.com/swobspace/wobapphelpers', branch: 
 gem 'wobauth', git: 'https://github.com/swobspace/wobauth.git', branch: 'master'
 gem 'cancancan', '~> 1.12.0'
 gem 'settingslogic'
+gem 'select2-rails'
+gem 'data-confirm-modal', git: 'https://github.com/ifad/data-confirm-modal.git'
+gem 'bower-rails', '~> 0.10.0'
 
 group :development do
   gem 'thin'

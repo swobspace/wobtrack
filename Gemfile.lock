@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/ifad/data-confirm-modal.git
+  revision: 931cab3b269c6dab301245be2b2d738b243ba169
+  specs:
+    data-confirm-modal (1.0.2)
+      railties (>= 3.0)
+
+GIT
   remote: https://github.com/plataformatec/simple_form.git
   revision: eac1e0108e6c95e291c2065e7005e0cbcb4c2bac
   branch: master
@@ -77,6 +84,7 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -266,6 +274,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    select2-rails (3.5.9.3)
+      thor (~> 0.14)
     settingslogic (2.0.9)
     shellany (0.0.1)
     shoulda-matchers (2.8.0)
@@ -316,10 +326,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
+  bower-rails (~> 0.10.0)
   byebug
   cancancan (~> 1.12.0)
   capybara
   coffee-rails (~> 4.1.0)
+  data-confirm-modal!
   database_rewinder
   dotenv
   factory_girl_rails
@@ -339,6 +351,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  select2-rails
   settingslogic
   shoulda-matchers
   simple_form!

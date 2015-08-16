@@ -1,7 +1,65 @@
+@import 'bootstrap-sprockets';
 @import "bootstrap";
 @import "bootstrap/theme";
 @import "wobapphelpers/breadcrumbs";
+@import 'common';
 
 body {
   padding-top: 50px;
+}
+
+
+@import 'bootstrap-sprockets';
+@import "bootstrap";
+@import "bootstrap/theme";
+@import "wobapphelpers/breadcrumbs";
+@import "common";
+
+body {
+  padding-top: 50px;
+}
+
+// --- FOOTER
+#footer{
+  padding-left:20px;
+  font-size: small;
+  color: #999;
+  hr { margin: 24px 0 0 0; }
+}
+
+// --- cell states
+
+tr td {
+  &.CRITICAL {background-color: #FAA !important;}
+  &.WARNING  {background-color: #FF9 !important;}
+  &.OK       {background-color: #FF9 !important;}
+}
+
+.autowidth { width: auto; min-width: 50%; }
+
+// --- dataTable
+
+table.dataTable.no-footer {
+  border-bottom: 1px solid #ddd;
+}
+div#dataTable_paginate>ul {
+  li.paginate_button {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+tfoot {
+  display: table-header-group;
+  input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+}
+
+div.form-group div input.datepicker {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
