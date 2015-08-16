@@ -30,6 +30,7 @@ de:
     latitude: Latitude
     name: Name
     sn: Nachname
+    time: Zeit
     track: Track
     trackpoint: Trackpoint
     username: Username
