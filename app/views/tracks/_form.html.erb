@@ -16,9 +16,9 @@
        %>
       <%= f.input :description
        %>
-      <%= f.input :date
+      <%= f.input :date, as: :string, wrapper: :horizontal_date
        %>
-      <%= f.association :user
+      <%= f.association :user, disabled: !current_user.is_admin?
        %>
       <%= f.input :creator
        %>
