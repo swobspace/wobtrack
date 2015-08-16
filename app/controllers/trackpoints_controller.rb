@@ -59,7 +59,7 @@ class TrackpointsController < ApplicationController
       @track = Track.find(params[:track_id])
     end
 
-    def add_breadcrumb_solo
-      add_breadcrumb_for [@trackpoint.track, @trackpoint]
+    def add_breadcrumb_show
+      add_breadcrumb_for([@trackpoint.track, @trackpoint])
     end
 end
