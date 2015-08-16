@@ -19,16 +19,17 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe TracksController, type: :controller do
+  login_admin
 
   # This should return the minimal set of attributes required to create a valid
   # Track. As you add validations to Track, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryGirl.attributes_for(:track).merge(user_id: 1)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: nil }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +104,14 @@ RSpec.describe TracksController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { name: "A mountain trail" }
       }
 
       it "updates the requested track" do
         track = Track.create! valid_attributes
         put :update, {:id => track.to_param, :track => new_attributes}, valid_session
         track.reload
-        skip("Add assertions for updated state")
+        expect(track.name).to eq(new_attributes[:name])
       end
 
       it "assigns the requested track as @track" do
