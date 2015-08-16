@@ -313,7 +313,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3.0)
+  bootstrap-sass (~> 3.3.5)
   byebug
   cancancan (~> 1.12.0)
   capybara

@@ -45,7 +45,7 @@ end
 
 
 gem 'therubyracer', platforms: :ruby
-gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'jquery-ui-rails'
 gem 'jquery-datatables-rails'
 gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git', branch: 'master'
