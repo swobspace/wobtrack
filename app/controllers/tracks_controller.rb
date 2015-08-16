@@ -25,7 +25,7 @@ class TracksController < ApplicationController
 
   # POST /tracks
   def create
-    @track = Track.new(track_params)
+    @track = Track.new(track_params.merge(user_id: current_user.id))
 
     @track.save
     respond_with(@track)
@@ -51,6 +51,10 @@ class TracksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def track_params
-      params.require(:track).permit(:name, :description, :date, :user_id, :creator)
+      if current_user.is_admin?
+        params.require(:track).permit(:name, :description, :date, :user_id, :creator)
+      else
+        params.require(:track).permit(:name, :description, :date, :creator)
+      end
     end
 end
