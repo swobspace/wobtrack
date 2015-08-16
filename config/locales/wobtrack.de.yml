@@ -3,6 +3,8 @@ de:
     all_tracks: Trackübersicht
     new_track: Neuen Track anlegen
     configuration: Konfiguration
+    change_columns: Spalten ändern
+    show_all: Alles anzeigen
   actions:
     destroy: Datensatz löschen
     mandantory: Pflichtfelder
