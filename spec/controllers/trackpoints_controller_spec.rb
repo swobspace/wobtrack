@@ -19,16 +19,19 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe TrackpointsController, type: :controller do
+  login_admin
+
+  let(:track) { FactoryGirl.create(:track) }
 
   # This should return the minimal set of attributes required to create a valid
   # Trackpoint. As you add validations to Trackpoint, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryGirl.attributes_for(:trackpoint, track_id: track.id)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { latitude: nil }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -39,7 +42,7 @@ RSpec.describe TrackpointsController, type: :controller do
   describe "GET #index" do
     it "assigns all trackpoints as @trackpoints" do
       trackpoint = Trackpoint.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {track_id: track.to_param}, valid_session
       expect(assigns(:trackpoints)).to eq([trackpoint])
     end
   end
@@ -47,14 +50,14 @@ RSpec.describe TrackpointsController, type: :controller do
   describe "GET #show" do
     it "assigns the requested trackpoint as @trackpoint" do
       trackpoint = Trackpoint.create! valid_attributes
-      get :show, {:id => trackpoint.to_param}, valid_session
+      get :show, {track_id: track.to_param, :id => trackpoint.to_param}, valid_session
       expect(assigns(:trackpoint)).to eq(trackpoint)
     end
   end
 
   describe "GET #new" do
     it "assigns a new trackpoint as @trackpoint" do
-      get :new, {}, valid_session
+      get :new, {track_id: track.to_param}, valid_session
       expect(assigns(:trackpoint)).to be_a_new(Trackpoint)
     end
   end
@@ -62,7 +65,7 @@ RSpec.describe TrackpointsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested trackpoint as @trackpoint" do
       trackpoint = Trackpoint.create! valid_attributes
-      get :edit, {:id => trackpoint.to_param}, valid_session
+      get :edit, {track_id: track.to_param, :id => trackpoint.to_param}, valid_session
       expect(assigns(:trackpoint)).to eq(trackpoint)
     end
   end
@@ -71,30 +74,30 @@ RSpec.describe TrackpointsController, type: :controller do
     context "with valid params" do
       it "creates a new Trackpoint" do
         expect {
-          post :create, {:trackpoint => valid_attributes}, valid_session
+          post :create, {track_id: track.to_param, :trackpoint => valid_attributes}, valid_session
         }.to change(Trackpoint, :count).by(1)
       end
 
       it "assigns a newly created trackpoint as @trackpoint" do
-        post :create, {:trackpoint => valid_attributes}, valid_session
+        post :create, {track_id: track.to_param, :trackpoint => valid_attributes}, valid_session
         expect(assigns(:trackpoint)).to be_a(Trackpoint)
         expect(assigns(:trackpoint)).to be_persisted
       end
 
       it "redirects to the created trackpoint" do
-        post :create, {:trackpoint => valid_attributes}, valid_session
-        expect(response).to redirect_to(Trackpoint.last)
+        post :create, {track_id: track.to_param, :trackpoint => valid_attributes}, valid_session
+        expect(response).to redirect_to([track, Trackpoint.last])
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved trackpoint as @trackpoint" do
-        post :create, {:trackpoint => invalid_attributes}, valid_session
+        post :create, {track_id: track.to_param, :trackpoint => invalid_attributes}, valid_session
         expect(assigns(:trackpoint)).to be_a_new(Trackpoint)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:trackpoint => invalid_attributes}, valid_session
+        post :create, {track_id: track.to_param, :trackpoint => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,34 +111,34 @@ RSpec.describe TrackpointsController, type: :controller do
 
       it "updates the requested trackpoint" do
         trackpoint = Trackpoint.create! valid_attributes
-        put :update, {:id => trackpoint.to_param, :trackpoint => new_attributes}, valid_session
+        put :update, {track_id: track.to_param, :id => trackpoint.to_param, :trackpoint => new_attributes}, valid_session
         trackpoint.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested trackpoint as @trackpoint" do
         trackpoint = Trackpoint.create! valid_attributes
-        put :update, {:id => trackpoint.to_param, :trackpoint => valid_attributes}, valid_session
+        put :update, {track_id: track.to_param, :id => trackpoint.to_param, :trackpoint => valid_attributes}, valid_session
         expect(assigns(:trackpoint)).to eq(trackpoint)
       end
 
       it "redirects to the trackpoint" do
         trackpoint = Trackpoint.create! valid_attributes
-        put :update, {:id => trackpoint.to_param, :trackpoint => valid_attributes}, valid_session
-        expect(response).to redirect_to(trackpoint)
+        put :update, {track_id: track.to_param, :id => trackpoint.to_param, :trackpoint => valid_attributes}, valid_session
+        expect(response).to redirect_to([track, trackpoint])
       end
     end
 
     context "with invalid params" do
       it "assigns the trackpoint as @trackpoint" do
         trackpoint = Trackpoint.create! valid_attributes
-        put :update, {:id => trackpoint.to_param, :trackpoint => invalid_attributes}, valid_session
+        put :update, {track_id: track.to_param, :id => trackpoint.to_param, :trackpoint => invalid_attributes}, valid_session
         expect(assigns(:trackpoint)).to eq(trackpoint)
       end
 
       it "re-renders the 'edit' template" do
         trackpoint = Trackpoint.create! valid_attributes
-        put :update, {:id => trackpoint.to_param, :trackpoint => invalid_attributes}, valid_session
+        put :update, {track_id: track.to_param, :id => trackpoint.to_param, :trackpoint => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,14 +148,14 @@ RSpec.describe TrackpointsController, type: :controller do
     it "destroys the requested trackpoint" do
       trackpoint = Trackpoint.create! valid_attributes
       expect {
-        delete :destroy, {:id => trackpoint.to_param}, valid_session
+        delete :destroy, {track_id: track.to_param, :id => trackpoint.to_param}, valid_session
       }.to change(Trackpoint, :count).by(-1)
     end
 
     it "redirects to the trackpoints list" do
       trackpoint = Trackpoint.create! valid_attributes
-      delete :destroy, {:id => trackpoint.to_param}, valid_session
-      expect(response).to redirect_to(trackpoints_url)
+      delete :destroy, {track_id: track.to_param, :id => trackpoint.to_param}, valid_session
+      expect(response).to redirect_to(track_trackpoints_url(track))
     end
   end
 
