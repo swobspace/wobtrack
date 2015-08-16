@@ -1,10 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Trackpoints", type: :request do
+RSpec.describe "Trackpoints", type: :feature do
   describe "GET /trackpoints" do
-    it "works! (now write some real specs)" do
-      get trackpoints_path
-      expect(response).to have_http_status(200)
+    let(:track) { FactoryGirl.create(:track) }
+    it "visits trackpoints#index" do
+      login_user
+      pending "not yet finished"
+
+      visit track_trackpoints_path(track)
+      expect(current_path).to eq(track_trackpoints_path(track))
     end
   end
 end

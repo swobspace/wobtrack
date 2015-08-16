@@ -27,7 +27,7 @@
 
 <div class="btn-toolbar" role="toolbar">
   <%= back_link %>
-  <%= edit_link(@trackpoint) %>
-  <%= delete_link(@trackpoint) %>
-  <%= new_link Trackpoint %>
+  <%= edit_link([@track, @trackpoint]) %>
+  <%= delete_link([@track, @trackpoint]) %>
+<%= link_to "Neuer Trackpoint", new_track_trackpoint_path(@track), class: 'btn btn-default' %>
 </div>

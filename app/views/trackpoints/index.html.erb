@@ -23,9 +23,9 @@
     <td><%= trackpoint.track %></td>
     <td><%= trackpoint.heart_rate %></td>
     <td class="nowrap">
-      <%= show_link trackpoint %>
-      <%= edit_link trackpoint %>
-      <%= delete_link trackpoint %>
+      <%= show_link [@track, trackpoint] %>
+      <%= edit_link [@track, trackpoint] %>
+      <%= delete_link [@track, trackpoint] %>
     </td>
   <% end %>
 <% end %>
@@ -35,4 +35,4 @@
 <br />
 
 <%= back_link %>
-<%= new_link Trackpoint %>
+<%= link_to "Neuer Trackpoint", new_track_trackpoint_path(@track), class: 'btn btn-default' %>

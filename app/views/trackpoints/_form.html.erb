@@ -1,4 +1,4 @@
-<%= simple_form_for(@trackpoint,
+<%= simple_form_for([@track,@trackpoint],
   html: { class: 'form-horizontal well' },
   wrapper: :horizontal_form,
   wrapper_mappings: {
@@ -19,8 +19,6 @@
       <%= f.input :elevation
        %>
       <%= f.input :time
-       %>
-      <%= f.association :track
        %>
       <%= f.input :heart_rate
        %>
