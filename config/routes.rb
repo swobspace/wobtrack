@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   mount Wobauth::Engine, at: '/auth'
 
-  resources :trackpoints
-  resources :tracks
+  resources :tracks do
+    resources :trackpoints
+  end
 
   root 'tracks#index'
 end
