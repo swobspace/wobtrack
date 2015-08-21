@@ -1,19 +1,9 @@
-@import 'bootstrap-sprockets';
-@import "bootstrap";
-@import "bootstrap/theme";
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "bootstrap/theme";
 @import "wobapphelpers/breadcrumbs";
 @import 'common';
-
-body {
-  padding-top: 50px;
-}
-
-
-@import 'bootstrap-sprockets';
-@import "bootstrap";
-@import "bootstrap/theme";
-@import "wobapphelpers/breadcrumbs";
-@import "common";
 
 body {
   padding-top: 50px;

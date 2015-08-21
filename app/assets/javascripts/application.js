@@ -13,7 +13,7 @@
 //= require jquery
 /// require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require data-confirm-modal
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-de
