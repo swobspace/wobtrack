@@ -19,6 +19,10 @@
     <th><%= t('attributes.creator')%>:</th>
     <td><%= @track.creator %></td>
   </tr>
+  <tr>
+    <th><%= t('attributes.trackpoints')%>:</th>
+    <td><%= @track.trackpoints.count %></td>
+  </tr>
 </table>
 
 <div class="btn-toolbar" role="toolbar">
@@ -26,4 +30,6 @@
   <%= edit_link(@track) %>
   <%= delete_link(@track) %>
   <%= new_link Track %>
+  <%= link_to "Trackpoints anzeigen", track_trackpoints_path(@track), 
+      class: 'btn btn-default' %>
 </div>
