@@ -12,9 +12,8 @@
  *
  *= require wobapphelpers/breadcrumbs
  *= require jquery-ui/datepicker
- *= require dataTables/jquery.dataTables
- *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
- *= require dataTables/extras/dataTables.responsive
+ *= require datatables/media/css/dataTables.bootstrap
+ *= require datatables-buttons/css/buttons.bootstrap
  *= require select2
  *= require select2-bootstrap
  *= require wobtrack
