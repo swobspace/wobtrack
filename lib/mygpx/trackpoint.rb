@@ -1,6 +1,6 @@
 module MyGPX
   class Trackpoint
-    attr_reader :xml, :latlon, :elevation, :time
+    attr_reader :xml, :latlon, :elevation, :time, :heartrate
 
     def initialize(options = {})
       options.symbolize_keys!
@@ -9,10 +9,11 @@ module MyGPX
       @latlon    = coordinates(@xml)
       @elevation = _elevation(@xml)
       @time      = _time(@xml)
+      @heartrate = _hr(@xml)
     end
 
     def to_s
-      sprintf("%10.6f\t%10.6f\t%7.2f", latitude, longitude, elevation) + "\t#{time}"
+      sprintf("%10.6f\t%10.6f\t%7.2f\t%3d", latitude, longitude, elevation, heartrate) + "\t#{time}"
     end
 
     def latitude
@@ -35,6 +36,10 @@ module MyGPX
 
     def _time(xml)
       xml.css("time").first.content.to_time
+    end
+
+    def _hr(xml)
+      xml.css("gpxtpx|hr").text.to_i
     end
   end
 end
