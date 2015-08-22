@@ -122,6 +122,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.10)
     formatador (0.2.5)
+    geocoder (1.2.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.13.0)
@@ -317,6 +318,7 @@ DEPENDENCIES
   database_rewinder
   dotenv
   factory_girl_rails
+  geocoder
   guard
   guard-bundler
   guard-livereload
