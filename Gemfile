@@ -39,6 +39,7 @@ gem 'settingslogic'
 gem 'select2-rails'
 gem 'data-confirm-modal', git: 'https://github.com/ifad/data-confirm-modal.git'
 gem 'bower-rails', '~> 0.10.0'
+gem 'nokogiri'
 
 group :development do
   gem 'thin'

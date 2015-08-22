@@ -326,6 +326,7 @@ DEPENDENCIES
   jquery-ui-rails
   libnotify
   mysql2
+  nokogiri
   poltergeist
   rails (= 4.2.3)
   rspec-rails
