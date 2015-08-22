@@ -12,7 +12,7 @@ module MyGPX
     end
 
     def to_s
-      sprintf("%3.6f\t%3.6f\t%4.2f", latitude, longitude, elevation) + "\t#{time}"
+      sprintf("%10.6f\t%10.6f\t%7.2f", latitude, longitude, elevation) + "\t#{time}"
     end
 
     def latitude
