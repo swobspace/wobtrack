@@ -1,4 +1,6 @@
 class Track < ActiveRecord::Base
+  include TrackConcerns
+
   # -- associations
   belongs_to :user, class_name: "Wobauth::User"
   has_many :trackpoints, dependent: :destroy
@@ -10,4 +12,6 @@ class Track < ActiveRecord::Base
   def to_s
     "#{name}"
   end
+
 end
+

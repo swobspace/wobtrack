@@ -19,5 +19,20 @@ RSpec.describe Track, type: :model do
     expect("#{f}").to be == "SomeWhere"
   end
 
+  describe "::import_gpxtrack(file: file, index: 0, user: user)" do
+    let(:file) { File.join( Rails.root, 'spec', 'fixtures', 'files', 'test.gpx') }
+    let(:user) { FactoryGirl.create(:user) }
+
+    it "increase track count by 1" do
+      expect {
+        Track.import_gpxtrack(file: file, index: 0, user: user)
+      }.to change(Track, :count).by(1)
+    end
+    it "increase trackpoint count by 2" do
+      expect {
+        Track.import_gpxtrack(file: file, index: 0, user: user)
+      }.to change(Trackpoint, :count).by(2)
+    end
+  end
 
 end
