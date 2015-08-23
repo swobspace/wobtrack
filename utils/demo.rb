@@ -43,3 +43,5 @@ gpx.tracks.each_with_index do |track,idx|
   end
   puts "Entfernung: #{dist_sum}"
 end
+
+Track.import_gpxtrack(file: file, index: 0, user: Wobauth::User.first)
