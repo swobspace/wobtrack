@@ -46,3 +46,4 @@ bower.json
 
 # test data
 *.gpx
+!/spec/fixtures/files/*.gpx
